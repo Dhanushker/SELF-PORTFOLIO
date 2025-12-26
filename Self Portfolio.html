@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dhanushker Sridhar — Front End Developer</title>
+  <meta name="description" content="Portfolio of Dhanushker Sridhar — Front End Developer. Projects, skills, experience and contact." />
+  <style>
+    :root{
+      --muted:#9aa7bf; --accent:#5eead4;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body,html{height:100%;overflow-x:hidden;color:#e6eef8}
+
+    /* Background canvas covers full screen */
+    #bgCanvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+
+    .container{max-width:1000px;margin:34px auto;padding:28px;position:relative;z-index:2}
+
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    .avatar{display:flex;align-items:center;gap:16px}
+    .avatar img{width:70px;height:70px;border-radius:0%}
+    h1{font-size:24px;margin:0}
+
+    /* navbar */
+    nav ul{list-style:none;display:flex;gap:20px}
+    nav a{color:var(--accent);font-weight:600;text-decoration:none;transition:.3s}
+    nav a:hover{color:white}
+
+    .page{display:none;animation:fadeIn .6s ease}
+    .page.active{display:block}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+    .card{background:rgba(0,0,0,0.4);backdrop-filter:blur(10px);padding:20px;border-radius:12px;margin-bottom:20px}
+    .muted{color:var(--muted)}
+
+    .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
+  </style>
+</head>
+<body>
+  <!-- 3D Background -->
+  <canvas id="bgCanvas"></canvas>
+
+  <div class="container">
+    <header>
+      <div class="avatar">
+        <img src="C:\Users\USER\Desktop\Dhanu Pic\IMG-20240828-WA0007.jpg" alt="Dhanushker Sridhar" />
+        <div>
+          <h1>Dhanushker Sridhar</h1>
+          <div class="muted">Front End Developer</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" onclick="showPage('home')">Home</a></li>
+          <li><a href="#" onclick="showPage('education')">Education</a></li>
+          <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+          <li><a href="#" onclick="showPage('experience')">Experience</a></li>
+          <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Home Page -->
+      <div id="home" class="page active">
+        <!-- About Me Card -->
+        <div class="card">
+        <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+          <img src="C:\Users\USER\Desktop\Dhanu Pic\IMG-20240828-WA0007.jpg" 
+              alt="Dhanushker Sridhar" 
+              style="width:120px;height:120px;border-radius:14px;object-fit:cover;box-shadow:0 0 12px rgba(94,234,212,0.3)">
+          <div>
+            <h2 style="margin:0">About Me</h2>
+            <p class="muted" style="margin-top:6px;max-width:600px">
+              Hi 👋 I'm <strong>Dhanushker Sridhar</strong>, a passionate 
+              <span style="color:var(--accent)">Front-End Developer</span> 
+              focused on building fast, responsive, and accessible web applications.  
+              Skilled in both <em>frontend design</em> and <em>backend basics</em>, I enjoy 
+              turning complex problems into simple, user-friendly experiences.
+            </p>
+
+            <!-- Buttons -->
+            <div style="margin-top:12px;display:flex;gap:10px;">
+              <a class="btn" 
+                href="mailto:dhanushkersridhar@gmail.com?subject=Portfolio%20Inquiry">Hire Me</a>
+
+              <a class="btn" 
+                href="C:\Users\USER\Desktop\Dhanu Pic\Dhanushker CV F-E.pdf.pdf" 
+                target="_blank">View CV</a>
+            </div>
+          </div>
+        </div>
+    
+      <!-- Skills Section -->
+      <div class="grid" style="margin-top:20px">
+        <aside style="grid-column:1/-1">
+          <div class="card">
+            <h3>Skills</h3>
+            <div class="skills" style="margin-top:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px">
+              
+              <!-- Frontend -->
+              <div>
+                <h4 style="margin:0 0 6px;color:var(--accent)">Frontend</h4>
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">Responsive Design</span>
+              </div>
+    
+              <!-- Backend -->
+              <div>
+                <h4 style="margin:0 0 6px;color:var(--accent)">Backend</h4>
+                <span class="skill">Python</span>
+                <span class="skill">Django</span>
+                <span class="skill">Java</span>
+                <span class="skill">SQL / MySQL</span>
+              </div>
+    
+              <!-- Tools -->
+              <div>
+                <h4 style="margin:0 0 6px;color:var(--accent)">Tools</h4>
+                <span class="skill">GitHub</span>
+                <span class="skill">Postman</span>
+                <span class="skill">NumPy</span>
+                <span class="skill">VS Code</span>
+              </div>
+    
+            </div>
+          </div>
+        </aside>
+      </div>
+    
+      <!-- Extra CTA -->
+      <div class="card" style="margin-top:20px;text-align:center">
+        <h3>🚀 Let’s Build Something Great Together!</h3>
+        <p class="muted">Open for freelance projects, internships, or full-time opportunities.</p>
+      </div>
+    </div>
+    </div>
+
+
+    <!-- Education Page -->
+    <div id="education" class="page">
+      <!-- 🎓 Education -->
+      <section class="card">
+        <div class="section-title">
+          <h2 style="margin:0 0 6px;color:var(--accent)">Education & Training</h2>
+          <div class="muted">Ongoing</div>
+        </div>
+    
+        <div class="timeline">
+          <div class="timeline-item">
+            <div style="font-weight:700">Higher National Diploma in Computing & Software Engineering</div>
+            <div class="muted">ICBT Campus — Expected Completion: 2025</div>
+            <ul class="muted" style="margin-top:8px;padding-left:18px">
+              <li>Data Structure & Algorithms</li>
+              <li>Mobile Application Development</li>
+              <li>Object-Oriented Programming</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    
+      <!-- 🏅 Certificates -->
+      <section class="card" style="margin-top:16px">
+        <div class="section-title">
+          <h2 style="margin:0 0 6px;color:var(--accent)">Certificates & Courses</h2>
+        </div>
+  
+          <div class="project-list">
+            <div class="project">
+              <div class="meta">
+                <div style="font-weight:700">Python Programming</div>
+                <div class="muted">Moratuwa University</div>
+              </div>
+              <div class="tag">2022</div>
+              <button onclick="window.open('file:///C:/Users/USER/Desktop/Dhanu%20Pic/Python_for_Beginners_E-Certificate.python%20Dhanu.pdf')">View</button>
+            </div>
+          </div><br>
+
+    
+          <div class="project">
+            <div class="meta">
+              <div style="font-weight:700">Java Programming</div>
+              <div class="muted">Online Certification</div>
+            </div>
+            <div class="tag">2022</div>
+          </div><br>
+    
+          <div class="project">
+            <div class="meta">
+              <div style="font-weight:700">Diploma in IT (DITIC)</div>
+              <div class="muted">E-soft Metropolitan Campus</div>
+            </div>
+            <div class="tag">2021</div>
+          </div><br>
+    
+          <div class="project">
+            <div class="meta">
+              <div style="font-weight:700">Diploma in English (DIE)</div>
+              <div class="muted">E-soft Metropolitan Campus</div>
+            </div>
+            <div class="tag">2021</div>
+          </div>
+          </section>
+        </div>
+
+
+      <!-- Projects Page -->
+    <div id="projects" class="page">
+      <section class="card" style="margin-top:16px">
+        <h2 style="margin:0 0 6px;color:var(--accent)">🚀 Projects</h2>
+        <p class="muted" style="margin-bottom:20px;">
+          A selection of my key projects showcasing front-end, back-end, and full-stack development skills.
+        </p>
+
+        <div class="project-list">
+          <!-- Project 1 -->
+          <div class="project">
+            <div class="meta">
+              <div style="font-weight:700">Company Website</div>
+              <div class="muted">Info Data System Pvt Ltd — HTML, CSS, JavaScript</div>
+            </div>
+            <div class="project-links">
+              <a class="tag" href="https://infodatasystem.lk/" target="_blank">📸 View</a>
+            </div>
+          </div><br>
+
+          <!-- Project 2 -->
+          <div class="project">
+            <div class="meta">
+              <div style="font-weight:700">Parole System</div>
+              <div class="muted">Python, SQL — Backend project</div>
+            </div>
+            <div class="project-links">
+              <span class="tag" style="cursor:pointer;" onclick="openGallery('payroll')">📸 View Gallery</span>
+            </div>
+          </div><br>
+
+          <!-- Project 3 -->
+          <div class="project">
+            <div class="meta">
+              <div style="font-weight:700">Wellness Center</div>
+              <div class="muted">HTML, CSS, JavaScript, EmailJS</div>
+            </div>
+            <div class="project-links">
+              <span class="tag" style="cursor:pointer;" onclick="openGallery('wellness')">📸 View Gallery</span>
+            </div>
+          </div><br>
+
+          <!-- Project 4 -->
+          <div class="project">
+            <div class="meta">
+              <div style="font-weight:700">Blockchain Voting System (In Progress)</div>
+              <div class="muted">JavaScript, Web3.js, Smart Contracts</div>
+            </div>
+            <div class="project-links">
+              <span class="tag" style="cursor:pointer;" onclick="openGallery('bvs')">📸 View Gallery</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- GALLERY MODAL -->
+    <div id="galleryModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+         background:rgba(0,0,0,0.85); z-index:9999; text-align:center; padding:40px;">
+      <span onclick="closeGallery()" 
+            style="position:absolute; top:20px; right:30px; font-size:28px; color:#fff; cursor:pointer;">✖</span>
+    </div>
+    
+    <!-- Education Page -->
+    <div id="experience" class="page">
+    <div class="card">
+      <h2 style="margin:0 0 6px;color:var(--accent)">Experience</h2><br>
+  
+      <div class="timeline">
+        <!-- Job 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Junior Frontend Developer</h3>
+            <div class="muted">Info Data System Pvt Ltd • 2023 – 2024</div>
+            <ul class="muted" style="margin-top:8px; padding-left:18px">
+              <li>Developed and maintained responsive, user-friendly web interfaces.</li>
+              <li>Translated Figma/Adobe XD designs into pixel-perfect components.</li>
+              <li>Optimized frontend performance for faster load times.</li>
+              <li>Debugged and resolved UI/UX issues to improve usability.</li>
+            </ul>
+          </div>
+        </div><br>
+  
+        <!-- Job 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Backend Developer (Intern)</h3>
+            <div class="muted">Info Data System Pvt Ltd • 2022</div>
+            <ul class="muted" style="margin-top:8px; padding-left:18px">
+              <li>Built RESTful APIs with authentication and database integration.</li>
+              <li>Worked with SQL/MySQL to design and manage relational databases.</li>
+              <li>Collaborated with frontend team to connect APIs with UI features.</li>
+              <li>Assisted in testing and debugging backend services.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- CONTACT SECTION -->
+    <div id="contact" class="page">
+      <div class="card" style="padding:28px; text-align:center;">
+        <h2 style="margin-bottom:16px; font-size:26px;">📞 Contact Me</h2>
+        <p class="muted" style="margin-bottom:24px;">Feel free to reach out for collaboration, freelance projects, or just to connect.</p>
+        
+        <!-- Phone -->
+        <div style="margin:12px 0;">
+          <strong>Phone:</strong> 
+          <a href="tel:+94763497833" id="phone" style="color:var(--accent); font-weight:600;">
+            +076-349-7833
+          </a>
+        </div>
+    
+        <!-- Email -->
+        <div style="margin:12px 0;">
+          <strong>Email:</strong> 
+          <a href="mailto:dhanushkersridhar@gmail.com" style="color:var(--accent); font-weight:600;">
+            dhanushkersridhar@gmail.com
+          </a>
+        </div>
+    
+        <!-- Social Links -->
+        <div style="margin-top:22px;">
+          <h3 style="margin-bottom:10px;">🌐 Social Profiles</h3>
+          <div class="socials" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+    
+            <a href="https://github.com/Dhanushker/Dhanushker" 
+               target="_blank" aria-label="GitHub"
+               style="text-decoration:none; color:var(--muted); font-weight:600;">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" 
+                   alt="GitHub" width="22" style="vertical-align:middle; filter:invert(80%);" /> GitHub
+            </a>
+    
+            <a href="https://www.linkedin.com/in/dhanushker-sridhar-4b5855269" 
+               target="_blank" aria-label="LinkedIn"
+               style="text-decoration:none; color:var(--muted); font-weight:600;">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" 
+                   alt="LinkedIn" width="22" style="vertical-align:middle; filter:invert(80%);" /> LinkedIn
+            </a>
+          </div>
+        </div>
+    
+        <!-- CTA -->
+        <div style="margin-top:26px;">
+          <a href="mailto:dhanushkersridhar@gmail.com?subject=Portfolio%20Inquiry" 
+             class="btn">
+            ✉️ Send a Message
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+  <script>
+    // Switch Pages
+     // Switch Pages
+    function showPage(pageId){
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    // ✅ Separate image lists for each project
+    const wellnessImages = [
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (100).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (104).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (105).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (106).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (107).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (108).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (109).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (110).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (111).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (112).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (113).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (114).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (115).png",
+      "C:/Users/USER/Desktop/self Project/WELLNESS CENTER/Screenshot (116).png"
+    ];
+
+    const payrollImages = [
+      "C:/Users/USER/Pictures/Screenshots/Screenshot (124).png",
+      "C:/Users/USER/Pictures/Screenshots/Screenshot (126).png",
+      "C:/Users/USER/Pictures/Screenshots/Screenshot (127).png",
+      "C:/Users/USER/Pictures/Screenshots/Screenshot (128).png",
+      "C:/Users/USER/Pictures/Screenshots/Screenshot (129).png",
+      "C:/Users/USER/Pictures/Screenshots/Screenshot (130).png",
+      "C:/Users/USER/Pictures/Screenshots/Screenshot (131).png"
+    ];
+
+    const blockchainvotingsystem = [
+
+    ];
+  
+
+  let currentIndex = 0;
+  let slideshowInterval;
+
+  // ✅ Combined gallery handler
+    function openGallery(project) {
+      let images;
+      if (project === "wellness") {
+        images = wellnessImages;
+      } else if (project === "payroll") {
+        images = payrollImages;
+      } else if (project === "bvg"){
+        images = blockchainvotingsystem;
+      } else {
+        return;
+      }
+
+      const galleryModal = document.getElementById("galleryModal");
+      galleryModal.innerHTML = `
+        <span onclick="closeGallery()" 
+              style="position:absolute; top:20px; right:30px; font-size:28px; color:#fff; cursor:pointer;">✖</span>
+        <div style="display:flex; justify-content:center; align-items:center; height:100%;">
+          <img id="galleryImage" src="${images[0]}" 
+              style="max-height:80%; border-radius:10px; transition:opacity 0.5s ease;">
+        </div>
+      `;
+      galleryModal.style.display = "block";
+
+      currentIndex = 0;
+      slideshowInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        const img = document.getElementById("galleryImage");
+        img.style.opacity = 0;
+        setTimeout(() => {
+          img.src = images[currentIndex];
+          img.style.opacity = 1;
+        }, 500);
+      }, 3000);
+    }
+
+    function closeGallery() {
+      document.getElementById("galleryModal").style.display = "none";
+      clearInterval(slideshowInterval); // stop auto slideshow
+    }
+
+    // 3D Background Setup
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({canvas: document.getElementById("bgCanvas"), antialias:true});
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    // Starfield
+    const starGeometry = new THREE.BufferGeometry();
+    const starCount = 2000;
+    const starPositions = [];
+    for(let i=0; i<starCount; i++){
+      const x = (Math.random()-0.5)*2000;
+      const y = (Math.random()-0.5)*2000;
+      const z = (Math.random()-0.5)*2000;
+      starPositions.push(x,y,z);
+    }
+    starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starPositions,3));
+    const starMaterial = new THREE.PointsMaterial({color:0x5eead4, size:1});
+    const stars = new THREE.Points(starGeometry, starMaterial);
+    scene.add(stars);
+
+    camera.position.z = 800;
+
+    function animate(){
+      requestAnimationFrame(animate);
+      stars.rotation.x += 0.0005;
+      stars.rotation.y += 0.0007;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', ()=>{
+      camera.aspect = window.innerWidth/window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
